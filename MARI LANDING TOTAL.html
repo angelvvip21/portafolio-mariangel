@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mariangel Velasco | Traductora e Intérprete (Español - Francés / Español - Italiano)</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            baseWhite: '#FFFFFF',
+            softGray: '#F7F7F7',
+            mustard: '#F6C927',
+            mustardHover: '#EAB308',
+            mustardTint: '#FFFBEB',
+            inkBlack: '#0B0B0C',
+            charcoal: '#141416',
+            mutedInk: '#4B5563'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Estilo limpio en blanco con acentos en amarillo dorado y negro profundo */
+    body {
+      background-color: #FFFFFF;
+      color: #0B0B0C;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .editorial-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .card-lift {
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease;
+    }
+
+    .card-lift:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px -16px rgba(11, 11, 12, 0.14);
+    }
+
+    @keyframes toastIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .toast-anim {
+      animation: toastIn 0.22s ease forwards;
+    }
+  </style>
+</head>
+<body class="bg-baseWhite text-inkBlack antialiased selection:bg-mustard selection:text-inkBlack">
+
+  <!-- 1. BARRA SUPERIOR DE NAVEGACIÓN -->
+  <header class="sticky top-0 z-40 bg-baseWhite/95 backdrop-blur-md border-b border-inkBlack/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-18 sm:h-20 py-3">
+        <!-- Marca -->
+        <a href="#inicio" class="flex items-center gap-3 group focus:outline-none">
+          <span class="w-10 h-10 rounded-full bg-mustard text-inkBlack font-serif italic font-bold text-xl flex items-center justify-center border border-inkBlack">
+            MV
+          </span>
+          <div class="leading-tight">
+            <span class="block font-serif text-lg sm:text-xl font-bold text-inkBlack tracking-tight">
+              Mariangel Velasco
+            </span>
+            <span class="block text-[11px] uppercase tracking-[0.18em] text-mutedInk font-medium">
+              Traductora &amp; Intérprete
+            </span>
+          </div>
+        </a>
+
+        <!-- Enlaces de Navegación Desktop -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-inkBlack/80">
+          <a href="#sobre-mi" class="hover:text-inkBlack hover:underline decoration-mustard decoration-2 underline-offset-8 transition-all">Sobre mí</a>
+          <a href="#formacion" class="hover:text-inkBlack hover:underline decoration-mustard decoration-2 underline-offset-8 transition-all">Formación</a>
+          <a href="#servicios" class="hover:text-inkBlack hover:underline decoration-mustard decoration-2 underline-offset-8 transition-all">Servicios</a>
+          <a href="#tarifas" class="hover:text-inkBlack hover:underline decoration-mustard decoration-2 underline-offset-8 transition-all">Tarifas y Condiciones</a>
+          <a href="#contacto" class="hover:text-inkBlack hover:underline decoration-mustard decoration-2 underline-offset-8 transition-all">Contacto</a>
+        </nav>
+
+        <!-- CTA Principal y Botón Móvil -->
+        <div class="flex items-center gap-3">
+          <a
+            href="#contacto"
+            class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-mustard text-inkBlack text-xs sm:text-sm font-semibold border border-inkBlack hover:bg-mustardHover transition-colors"
+          >
+            Cotizar servicio
+          </a>
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            class="lg:hidden p-2.5 rounded-xl border border-inkBlack/20 text-inkBlack hover:bg-mustardTint transition-colors"
+          >
+            <svg id="menu-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg id="menu-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Menú Móvil -->
+      <div id="mobile-menu" class="lg:hidden hidden pb-5 pt-2 border-t border-inkBlack/10">
+        <div class="flex flex-col space-y-1.5 text-sm font-medium">
+          <a href="#sobre-mi" class="mobile-link px-3 py-2.5 rounded-xl hover:bg-mustardTint text-inkBlack">Sobre mí</a>
+          <a href="#formacion" class="mobile-link px-3 py-2.5 rounded-xl hover:bg-mustardTint text-inkBlack">Formación</a>
+          <a href="#servicios" class="mobile-link px-3 py-2.5 rounded-xl hover:bg-mustardTint text-inkBlack">Servicios</a>
+          <a href="#tarifas" class="mobile-link px-3 py-2.5 rounded-xl hover:bg-mustardTint text-inkBlack">Tarifas y Condiciones</a>
+          <a href="#contacto" class="mobile-link mt-2 px-4 py-3 rounded-full bg-mustard text-inkBlack font-semibold text-center border border-inkBlack">
+            Cotizar servicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. SECCIÓN PRINCIPAL (HERO) CON PROTAGONISTA GRANDE A LA DERECHA -->
+    <section id="inicio" class="bg-baseWhite border-b border-inkBlack/10 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+
+          <!-- Columna Izquierda: Titular, Propuesta de Valor, CTAs y Highlights -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-mustardTint border border-mustard text-inkBlack text-xs font-semibold uppercase tracking-[0.16em]">
+              <span class="w-2 h-2 rounded-full bg-inkBlack"></span>
+              Traductora e Intérprete
+            </div>
+
+            <h1 class="font-serif text-5xl sm:text-6xl font-bold text-inkBlack leading-[0.98] tracking-tight">
+              Mariangel Velasco
+            </h1>
+
+            <p class="text-base sm:text-lg text-mutedInk leading-relaxed">
+              Transmito con fidelidad, estilo y precisión la esencia de cada orador, autor y encuentro bilingüe con alto nivel de inmersión.
+            </p>
+
+            <!-- Botones de Acción -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-1">
+              <a
+                href="#contacto"
+                class="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-mustard text-inkBlack font-semibold text-sm sm:text-base border border-inkBlack hover:bg-mustardHover transition-colors"
+              >
+                Solicitar cotización
+              </a>
+              <a
+                href="#tarifas"
+                class="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-baseWhite text-inkBlack font-semibold text-sm sm:text-base border border-inkBlack hover:bg-inkBlack hover:text-baseWhite transition-colors"
+              >
+                Ver tarifas
+              </a>
+            </div>
+
+            <!-- Fila de Destacados / Datos Clave -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-3 pt-4 border-t border-inkBlack/10">
+              <div class="p-3.5 rounded-2xl bg-softGray border border-inkBlack/10">
+                <span class="block font-serif text-xl font-bold text-inkBlack">5to Año UCV</span>
+                <span class="block text-xs text-mutedInk mt-0.5">Traducción e Interpretación</span>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-mustardTint border border-mustard/60">
+                <span class="block font-serif text-xl font-bold text-inkBlack">ES–FR / ES–IT</span>
+                <span class="block text-xs text-mutedInk mt-0.5">Pares idiomáticos</span>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-softGray border border-inkBlack/10">
+                <span class="block font-serif text-xl font-bold text-inkBlack">3 Modalidades</span>
+                <span class="block text-xs text-mutedInk mt-0.5">Presencial · Remota · Híbrida</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Retrato Protagonista Grande con Círculo Amarillo Dorado -->
+          <div class="lg:col-span-7 relative flex justify-center lg:justify-end">
+            <div class="relative w-full max-w-lg lg:max-w-xl xl:max-w-[580px]">
+              <!-- Círculo Amarillo Dorado característico detrás de la protagonista -->
+              <div
+                aria-hidden="true"
+                class="w-72 h-72 sm:w-96 sm:h-96 lg:w-[440px] lg:h-[440px] rounded-full bg-mustard absolute -right-4 sm:-right-6 top-8 sm:top-10 -z-0"
+              ></div>
+
+              <!-- Anillo negro sutil de acento editorial -->
+              <div
+                aria-hidden="true"
+                class="hidden sm:block w-24 h-24 rounded-full border-2 border-inkBlack absolute -left-5 bottom-14 z-10 pointer-events-none"
+              ></div>
+
+              <figure class="relative z-10 rounded-[2rem] overflow-hidden bg-softGray border border-inkBlack/15 shadow-xl">
+                <div class="aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden">
+                  <img
+                    src="mariboina.jpg"
+                    alt="Mariangel Velasco, Traductora e Intérprete"
+                    class="w-full h-full object-cover object-top"
+                    onerror="handleHeroFallback(this)"
+                  />
+                  <div
+                    id="hero-img-fallback"
+                    class="hidden w-full h-full flex-col items-center justify-center p-8 text-center bg-softGray text-inkBlack"
+                  >
+                    <span class="w-16 h-16 rounded-full bg-mustard border border-inkBlack font-serif italic font-bold text-2xl flex items-center justify-center mb-3">
+                      MV
+                    </span>
+                    <p class="font-serif text-2xl font-bold">Mariangel Velasco</p>
+                    <p class="text-xs text-mutedInk mt-1">Imagen principal: <code class="font-semibold text-inkBlack">mariboina.jpg</code></p>
+                  </div>
+                </div>
+
+                <!-- Etiqueta inferior limpia con botón negro de flecha -->
+                <figcaption class="bg-baseWhite px-5 py-3.5 border-t border-inkBlack/10 flex items-center justify-between gap-3">
+                  <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-inkBlack">Mariangel Velasco</span>
+                    <span class="block text-xs text-mutedInk">Interpretación y Traducción Profesional</span>
+                  </div>
+                  <a
+                    href="#servicios"
+                    aria-label="Ir a servicios"
+                    class="w-10 h-10 rounded-xl bg-inkBlack text-mustard flex items-center justify-center hover:bg-mustard hover:text-inkBlack border border-inkBlack transition-colors shrink-0"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SOBRE MÍ & FORMACIÓN -->
+    <section id="sobre-mi" class="py-16 sm:py-24 bg-baseWhite border-b border-inkBlack/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+          <!-- Sobre mí -->
+          <div class="lg:col-span-5 space-y-5">
+            <span class="inline-block px-3 py-1 rounded-full bg-mustard text-inkBlack text-xs font-bold uppercase tracking-widest">
+              Sobre mí
+            </span>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-inkBlack leading-tight">
+              Precisión, fidelidad y conexión cultural
+            </h2>
+            <p class="text-mutedInk text-sm sm:text-base leading-relaxed">
+              Apasionada por las palabras y su poder para conectar culturas, me especializo en la traducción e interpretación en diversas áreas de interés. Mi objetivo es trasmitir con precisión y fidelidad la esencia de cada autor, orador, texto, etc... respetando su estilo y matices. Este compromiso se refleja en el alto nivel de inmersión que aporto en cada proyecto en el que me involucro.
+            </p>
+          </div>
+
+          <!-- Formación -->
+          <div id="formacion" class="lg:col-span-7 space-y-4">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-inkBlack mb-2">
+              Formación
+            </h3>
+
+            <!-- Formación 1 -->
+            <div class="card-lift p-5 sm:p-6 rounded-2xl bg-baseWhite border border-inkBlack/15 flex items-start gap-4">
+              <span class="w-10 h-10 rounded-xl bg-mustard text-inkBlack font-bold text-sm flex items-center justify-center border border-inkBlack shrink-0">
+                01
+              </span>
+              <div>
+                <h4 class="font-bold text-sm sm:text-base text-inkBlack">
+                  Estudiante del 5to Año de la Carrera de Traducción e Interpretación
+                </h4>
+                <p class="text-xs sm:text-sm text-mutedInk mt-1">
+                  Universidad Central de Venezuela (UCV)
+                </p>
+              </div>
+            </div>
+
+            <!-- Formación 2 -->
+            <div class="card-lift p-5 sm:p-6 rounded-2xl bg-baseWhite border border-inkBlack/15 flex items-start gap-4">
+              <span class="w-10 h-10 rounded-xl bg-softGray text-inkBlack font-bold text-sm flex items-center justify-center border border-inkBlack/20 shrink-0">
+                02
+              </span>
+              <div>
+                <h4 class="font-bold text-sm sm:text-base text-inkBlack">
+                  TSU en Idiomas Modernos
+                </h4>
+                <p class="text-xs sm:text-sm text-mutedInk mt-1">
+                  Instituto Universitario Américo Vespucio
+                </p>
+              </div>
+            </div>
+
+            <!-- Formación 3 -->
+            <div class="card-lift p-5 sm:p-6 rounded-2xl bg-inkBlack text-baseWhite border border-inkBlack flex items-start gap-4">
+              <span class="w-10 h-10 rounded-xl bg-mustard text-inkBlack font-bold text-sm flex items-center justify-center shrink-0">
+                03
+              </span>
+              <div>
+                <h4 class="font-bold text-sm sm:text-base text-baseWhite">
+                  Especialista en Comunicación Estratégica y Oratoria Corporativa
+                </h4>
+                <p class="text-xs sm:text-sm text-mustard mt-1">
+                  Escuela Venezolana de Oratoria (Blotheo)
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SERVICIOS ("¿QUÉ PUEDO OFRECERTE?") + BANDA NEGRA DE PREPARACIÓN -->
+    <section id="servicios" class="py-16 sm:py-24 bg-baseWhite border-b border-inkBlack/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="max-w-2xl mb-12">
+          <span class="inline-block px-3 py-1 rounded-full bg-mustardTint border border-mustard text-inkBlack text-xs font-bold uppercase tracking-widest mb-3">
+            Servicios
+          </span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-bold text-inkBlack leading-tight">
+            ¿Qué puedo ofrecerte?
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <!-- Interpretación -->
+          <article class="card-lift rounded-3xl bg-baseWhite border border-inkBlack/15 p-7 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-11 h-11 rounded-2xl bg-mustard border border-inkBlack text-inkBlack flex items-center justify-center font-bold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                </svg>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-inkBlack">
+                Interpretación Simultánea y Consecutiva
+              </h3>
+              <p class="text-sm text-mutedInk leading-relaxed">
+                Facilito la interacción lingüística entre oradores de distintas lenguas en las modalidades presencial, remota o híbrida.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-inkBlack/10 text-xs font-semibold text-inkBlack">
+              Presencial · Remota · Híbrida
+            </div>
+          </article>
+
+          <!-- Traducción Profesional -->
+          <article class="card-lift rounded-3xl bg-baseWhite border border-inkBlack/15 p-7 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-11 h-11 rounded-2xl bg-inkBlack text-mustard flex items-center justify-center font-bold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-inkBlack">
+                Traducción Profesional
+              </h3>
+              <p class="text-sm text-mutedInk leading-relaxed">
+                Me encargo de transmitir tu mensaje manteniendo la intención y el sentido del mismo. Pares idiomáticos: <strong class="text-inkBlack">Español – Francés</strong> y <strong class="text-inkBlack">Español – Italiano</strong>.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-inkBlack/10 text-xs font-semibold text-inkBlack">
+              Español – Francés · Español – Italiano
+            </div>
+          </article>
+
+          <!-- Comunicación de Alto Impacto -->
+          <article class="card-lift rounded-3xl bg-mustardTint border-2 border-mustard p-7 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="inline-flex items-center px-3 py-1 rounded-full bg-mustard border border-inkBlack text-inkBlack font-serif text-xl font-bold">
+                100%
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-inkBlack">
+                Comunicación Asertiva, Empática y de Alto Impacto
+              </h3>
+              <p class="text-sm text-inkBlack/80 leading-relaxed">
+                Cuidado expresivo, empatía intercultural y dominio escénico para que cada mensaje se proyecte con claridad y solidez.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-mustard/50 text-xs font-semibold text-inkBlack">
+              Asertiva · Empática · Alto Impacto
+            </div>
+          </article>
+        </div>
+
+        <!-- Banda Negra de Alto Contraste: Rigor y Anexos de Preparación -->
+        <div class="rounded-3xl bg-inkBlack text-baseWhite p-7 sm:p-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div class="space-y-2 max-w-2xl">
+            <span class="inline-block px-3 py-1 rounded-full bg-mustard text-inkBlack text-xs font-bold uppercase tracking-wider">
+              Preparación y Anexos del Portafolio
+            </span>
+            <h3 class="font-serif text-3xl sm:text-4xl font-bold text-baseWhite">
+              Rigor terminológico previo en cada evento
+            </h3>
+            <p class="text-sm sm:text-base text-baseWhite/80 leading-relaxed">
+              Cada contratación incluye investigación conceptual y anexos terminológicos especializados (como glosarios técnicos de negocios, finanzas e inversión) adaptados a los discursos y presentaciones del evento.
+            </p>
+          </div>
+          <a
+            href="#contacto"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-mustard text-inkBlack font-semibold text-sm hover:bg-mustardHover transition-colors shrink-0"
+          >
+            <span>Consultar preparación</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. TARIFAS Y CONDICIONES DEL SERVICIO -->
+    <section id="tarifas" class="py-16 sm:py-24 bg-baseWhite border-b border-inkBlack/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="max-w-3xl mb-12">
+          <span class="inline-block px-3 py-1 rounded-full bg-mustard text-inkBlack text-xs font-bold uppercase tracking-widest mb-3">
+            Tarifas y Condiciones
+          </span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-bold text-inkBlack leading-tight">
+            Cotización estándar y condiciones del servicio
+          </h2>
+          <p class="text-sm sm:text-base text-mutedInk mt-3 leading-relaxed">
+            Cada proyecto de interpretación es un compromiso y se planifica de forma personalizada según la modalidad, la duración del evento y el nivel de especialización que requiera.
+          </p>
+        </div>
+
+        <!-- Tabla / Tarjetas de Tarifas Estándar -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-7 items-stretch mb-12 pt-3">
+
+          <!-- Tarjeta 1: Una Hora (50 USD) -->
+          <article class="card-lift rounded-3xl bg-baseWhite border border-inkBlack/15 p-7 sm:p-8 flex flex-col justify-between shadow-md">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full bg-softGray border border-inkBlack/15 text-xs font-bold uppercase tracking-wider text-inkBlack">
+                  Puntual
+                </span>
+                <span class="text-xs font-semibold text-mutedInk">1 hora</span>
+              </div>
+
+              <div>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-inkBlack">
+                  Una Hora (1)
+                </h3>
+                <p class="text-xs sm:text-sm text-mutedInk mt-1">
+                  Interpretación Simultánea / Consecutiva
+                </p>
+              </div>
+
+              <div class="py-4 border-y border-inkBlack/10 flex items-baseline gap-2">
+                <span class="font-serif text-5xl font-bold text-inkBlack tracking-tight">50</span>
+                <span class="text-sm font-bold uppercase tracking-wider text-inkBlack">USD</span>
+              </div>
+
+              <ul class="space-y-2.5 text-xs sm:text-sm text-mutedInk">
+                <li class="flex items-start gap-2">
+                  <span class="text-inkBlack font-bold">✓</span>
+                  <span>Reuniones breves, entrevistas o sesiones puntuales.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-inkBlack font-bold">✓</span>
+                  <span>Modalidad presencial, remota o híbrida.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-inkBlack font-bold">✓</span>
+                  <span>Preparación terminológica previa según temática.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-inkBlack/10">
+              <button
+                type="button"
+                data-select-plan="50"
+                class="plan-select-btn w-full py-3.5 px-5 rounded-full bg-baseWhite text-inkBlack text-sm font-semibold border border-inkBlack hover:bg-inkBlack hover:text-baseWhite transition-colors cursor-pointer"
+              >
+                Seleccionar plan
+              </button>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2: Media Jornada (180 USD) -->
+          <article class="card-lift rounded-3xl bg-baseWhite border border-inkBlack/15 p-7 sm:p-8 flex flex-col justify-between shadow-md">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full bg-softGray border border-inkBlack/15 text-xs font-bold uppercase tracking-wider text-inkBlack">
+                  Sesión extendida
+                </span>
+                <span class="text-xs font-semibold text-mutedInk">4 horas</span>
+              </div>
+
+              <div>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-inkBlack">
+                  Media Jornada (4 horas)
+                </h3>
+                <p class="text-xs sm:text-sm text-mutedInk mt-1">
+                  Interpretación Simultánea / Consecutiva
+                </p>
+              </div>
+
+              <div class="py-4 border-y border-inkBlack/10 flex items-baseline gap-2">
+                <span class="font-serif text-5xl font-bold text-inkBlack tracking-tight">180</span>
+                <span class="text-sm font-bold uppercase tracking-wider text-inkBlack">USD</span>
+              </div>
+
+              <ul class="space-y-2.5 text-xs sm:text-sm text-mutedInk">
+                <li class="flex items-start gap-2">
+                  <span class="text-inkBlack font-bold">✓</span>
+                  <span>Talleres, paneles, mesas de trabajo o seminarios.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-inkBlack font-bold">✓</span>
+                  <span>Cobertura en Español–Francés o Español–Italiano.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-inkBlack font-bold">✓</span>
+                  <span>Revisión de presentaciones y discursos entregados.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-inkBlack/10">
+              <button
+                type="button"
+                data-select-plan="180"
+                class="plan-select-btn w-full py-3.5 px-5 rounded-full bg-baseWhite text-inkBlack text-sm font-semibold border border-inkBlack hover:bg-inkBlack hover:text-baseWhite transition-colors cursor-pointer"
+              >
+                Cotizar este plan
+              </button>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3 (DESTACADA / RECOMENDADA): Jornada Completa (350 USD) -->
+          <article class="card-lift relative rounded-3xl bg-inkBlack text-baseWhite border-2 border-mustard p-7 sm:p-8 flex flex-col justify-between shadow-2xl lg:-translate-y-2 ring-4 ring-mustard/25">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-mustard text-inkBlack text-xs font-extrabold uppercase tracking-wider border border-mustard">
+                  ★ Recomendada
+                </span>
+                <span class="text-xs font-semibold text-mustard">8 horas · 1h almuerzo</span>
+              </div>
+
+              <div>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-baseWhite">
+                  Jornada Completa (8 horas)
+                </h3>
+                <p class="text-xs sm:text-sm text-baseWhite/75 mt-1">
+                  Con pausa para almorzar · Simultánea o Consecutiva
+                </p>
+              </div>
+
+              <div class="py-4 border-y border-baseWhite/15 flex items-baseline gap-2">
+                <span class="font-serif text-5xl sm:text-6xl font-bold text-mustard tracking-tight">350</span>
+                <span class="text-sm font-bold uppercase tracking-wider text-baseWhite">USD</span>
+              </div>
+
+              <ul class="space-y-2.5 text-xs sm:text-sm text-baseWhite/85">
+                <li class="flex items-start gap-2">
+                  <span class="text-mustard font-bold">✓</span>
+                  <span>Ideal para congresos, cumbres, ruedas de negocios o jornadas integrales.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-mustard font-bold">✓</span>
+                  <span>Incluye 8 horas con pausa para almorzar garantizada.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-mustard font-bold">✓</span>
+                  <span>Inmersión terminológica completa y alta precisión estilística.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-baseWhite/15">
+              <button
+                type="button"
+                data-select-plan="350"
+                class="plan-select-btn w-full py-3.5 px-5 rounded-full bg-mustard text-inkBlack text-sm font-bold border border-mustard hover:bg-mustardHover transition-colors cursor-pointer"
+              >
+                Cotizar este plan
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Condiciones Generales y Condiciones Específicas -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          <!-- Condiciones Generales -->
+          <div class="rounded-3xl bg-softGray border border-inkBlack/15 p-6 sm:p-8 space-y-5">
+            <div class="flex items-center gap-2.5 pb-3 border-b border-inkBlack/10">
+              <span class="w-3 h-3 rounded-full bg-mustard border border-inkBlack"></span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-inkBlack">
+                Condiciones Generales del Servicio
+              </h3>
+            </div>
+
+            <div class="space-y-4 text-sm text-mutedInk leading-relaxed">
+              <div>
+                <strong class="text-inkBlack block mb-0.5">Forma de pago:</strong>
+                El 50% de la tarifa debe ser cancelada al momento de confirmar el servicio, y el 50% restante al finalizar el evento o dentro de los 15 días posteriores.
+              </div>
+              <div>
+                <strong class="text-inkBlack block mb-0.5">Métodos de pago:</strong>
+                Transferencia bancaria (bolívares), PayPal y divisas.
+              </div>
+              <div>
+                <strong class="text-inkBlack block mb-0.5">Datos indispensables para cotizar el servicio:</strong>
+                Nombre del evento, fecha, tipo de interpretación, modalidad, par idiomático, horario y duración, y temas a tratar.
+              </div>
+            </div>
+          </div>
+
+          <!-- Condiciones Específicas -->
+          <div class="rounded-3xl bg-softGray border border-inkBlack/15 p-6 sm:p-8 space-y-4">
+            <div class="flex items-center gap-2.5 pb-3 border-b border-inkBlack/10">
+              <span class="w-3 h-3 rounded-full bg-inkBlack"></span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-inkBlack">
+                Condiciones Específicas del Servicio
+              </h3>
+            </div>
+
+            <ul class="space-y-2.5 text-xs sm:text-sm text-mutedInk leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-inkBlack font-bold">•</span>
+                <span>Si el evento es de interpretación simultánea superior a 90 minutos o 2 horas continuas, se exige un intérprete extra al cual también se le paga la jornada (debido al relevo cada 30 minutos).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-inkBlack font-bold">•</span>
+                <span>El cliente deberá especificar si el lugar del evento cuenta con cabina y equipo de interpretación; de lo contrario, deberá contratarlo.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-inkBlack font-bold">•</span>
+                <span>El cliente deberá entregar con antelación un PDF con los discursos y las presentaciones del evento.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-inkBlack font-bold">•</span>
+                <span>Si el evento es en modalidad presencial fuera de Caracas, el cliente deberá cubrir los gastos de traslado y viáticos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-inkBlack font-bold">•</span>
+                <span>Al optar por contratar el servicio de interpretación consecutiva, es importante tener en cuenta que esta modalidad duplica el tiempo del evento.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-inkBlack font-bold">•</span>
+                <span>En caso de que el orador/ponente no asista, el servicio se cobra de todos modos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-inkBlack font-bold">•</span>
+                <span>Para las jornadas de 8 horas, el cliente debe garantizar una (1) hora de almuerzo.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-inkBlack font-bold">•</span>
+                <span>En caso de pagar el servicio a través de transferencia bancaria (bolívares), se debe añadir el 16% del IVA.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-inkBlack font-bold">•</span>
+                <span>En caso de querer cancelar el servicio, debe hacerse con 48 horas de antelación; de lo contrario, se cobra de todos modos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-inkBlack font-bold">•</span>
+                <span>Una vez entregado el presupuesto, el cliente debe enviar un correo confirmando su aprobación del mismo.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-inkBlack font-bold">•</span>
+                <span>En caso de que desee retransmitir el evento por streaming o archivar el audio para uso comercial o institucional, se incluye un recargo por derechos de uso.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. COTIZADOR RÁPIDO & CONTACTO -->
+    <section id="contacto" class="py-16 sm:py-24 bg-baseWhite">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="max-w-3xl mb-12">
+          <span class="inline-block px-3 py-1 rounded-full bg-mustard text-inkBlack text-xs font-bold uppercase tracking-widest mb-3">
+            Contacto
+          </span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-bold text-inkBlack leading-tight">
+            Cotizador rápido y contacto directo
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+          <!-- Datos Directos de Contacto -->
+          <div class="lg:col-span-4 rounded-3xl bg-inkBlack text-baseWhite p-7 sm:p-8 space-y-6">
+            <div>
+              <span class="text-xs uppercase tracking-widest text-mustard font-semibold">Contacto directo</span>
+              <h3 class="font-serif text-3xl font-bold text-baseWhite mt-1">Mariangel Velasco</h3>
+              <p class="text-xs text-baseWhite/70 mt-1">Traductora e Intérprete</p>
+            </div>
+
+            <div class="space-y-4 pt-4 border-t border-baseWhite/15 text-sm">
+              <div>
+                <span class="block text-[11px] uppercase tracking-widest text-baseWhite/55 mb-1">Teléfono</span>
+                <a href="tel:+584242965611" class="text-base font-semibold text-mustard hover:underline">
+                  0424 296 56 11
+                </a>
+              </div>
+              <div>
+                <span class="block text-[11px] uppercase tracking-widest text-baseWhite/55 mb-1">Correo electrónico</span>
+                <a href="mailto:mariangelvelasco21@gmail.com" class="text-sm sm:text-base font-semibold text-baseWhite hover:text-mustard transition-colors break-all">
+                  mariangelvelasco21@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cotizador Interactivo -->
+          <div class="lg:col-span-8 rounded-3xl bg-softGray border border-inkBlack/15 p-6 sm:p-8">
+            <form id="quote-form" class="space-y-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="event-name" class="block text-xs font-bold uppercase tracking-wider text-inkBlack mb-1.5">
+                    Nombre del evento *
+                  </label>
+                  <input
+                    id="event-name"
+                    type="text"
+                    required
+                    placeholder="Ej. Encuentro Empresarial"
+                    class="w-full px-4 py-3 rounded-2xl bg-baseWhite border border-inkBlack/15 text-sm text-inkBlack focus:outline-none focus:border-inkBlack"
+                  />
+                </div>
+
+                <div>
+                  <label for="event-date" class="block text-xs font-bold uppercase tracking-wider text-inkBlack mb-1.5">
+                    Fecha *
+                  </label>
+                  <input
+                    id="event-date"
+                    type="date"
+                    required
+                    class="w-full px-4 py-3 rounded-2xl bg-baseWhite border border-inkBlack/15 text-sm text-inkBlack focus:outline-none focus:border-inkBlack"
+                  />
+                </div>
+
+                <div>
+                  <label for="interp-type" class="block text-xs font-bold uppercase tracking-wider text-inkBlack mb-1.5">
+                    Tipo de interpretación *
+                  </label>
+                  <select
+                    id="interp-type"
+                    class="w-full px-4 py-3 rounded-2xl bg-baseWhite border border-inkBlack/15 text-sm text-inkBlack focus:outline-none focus:border-inkBlack"
+                  >
+                    <option value="Interpretación Simultánea">Interpretación Simultánea</option>
+                    <option value="Interpretación Consecutiva">Interpretación Consecutiva</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="event-modality" class="block text-xs font-bold uppercase tracking-wider text-inkBlack mb-1.5">
+                    Modalidad *
+                  </label>
+                  <select
+                    id="event-modality"
+                    class="w-full px-4 py-3 rounded-2xl bg-baseWhite border border-inkBlack/15 text-sm text-inkBlack focus:outline-none focus:border-inkBlack"
+                  >
+                    <option value="Presencial">Presencial</option>
+                    <option value="Remota">Remota</option>
+                    <option value="Híbrida">Híbrida</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="lang-pair" class="block text-xs font-bold uppercase tracking-wider text-inkBlack mb-1.5">
+                    Par idiomático *
+                  </label>
+                  <select
+                    id="lang-pair"
+                    class="w-full px-4 py-3 rounded-2xl bg-baseWhite border border-inkBlack/15 text-sm text-inkBlack focus:outline-none focus:border-inkBlack"
+                  >
+                    <option value="Español - Francés">Español - Francés</option>
+                    <option value="Español - Italiano">Español - Italiano</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="duration-tier" class="block text-xs font-bold uppercase tracking-wider text-inkBlack mb-1.5">
+                    Horario y duración *
+                  </label>
+                  <select
+                    id="duration-tier"
+                    class="w-full px-4 py-3 rounded-2xl bg-baseWhite border border-inkBlack/15 text-sm text-inkBlack focus:outline-none focus:border-inkBlack"
+                  >
+                    <option value="50" data-label="Una Hora (1)">Una Hora (1) — 50 USD</option>
+                    <option value="180" data-label="Media Jornada (4 horas)">Media Jornada (4 horas) — 180 USD</option>
+                    <option value="350" data-label="Jornada Completa (8 horas, con pausa para almorzar)" selected>Jornada Completa (8 horas) — 350 USD</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="event-topics" class="block text-xs font-bold uppercase tracking-wider text-inkBlack mb-1.5">
+                  Temas a tratar *
+                </label>
+                <textarea
+                  id="event-topics"
+                  rows="3"
+                  required
+                  placeholder="Indica los temas del evento, ponentes o necesidades técnicas..."
+                  class="w-full px-4 py-3 rounded-2xl bg-baseWhite border border-inkBlack/15 text-sm text-inkBlack focus:outline-none focus:border-inkBlack"
+                ></textarea>
+              </div>
+
+              <!-- Opciones según reglas del portafolio -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                <label class="flex items-start gap-2.5 p-3.5 rounded-2xl bg-baseWhite border border-inkBlack/15 text-xs text-inkBlack cursor-pointer">
+                  <input id="opt-iva" type="checkbox" class="mt-0.5 accent-inkBlack" />
+                  <span>Añadir <strong>+16% IVA</strong> (pago por transferencia bancaria en bolívares)</span>
+                </label>
+                <label class="flex items-start gap-2.5 p-3.5 rounded-2xl bg-baseWhite border border-inkBlack/15 text-xs text-inkBlack cursor-pointer">
+                  <input id="opt-second-interpreter" type="checkbox" class="mt-0.5 accent-inkBlack" />
+                  <span>Simultánea &gt; 90 min / 2h continuas (<strong>2do intérprete / relevo cada 30 min</strong>)</span>
+                </label>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3 pt-1">
+                <button
+                  type="submit"
+                  class="px-6 py-3 rounded-full bg-mustard text-inkBlack text-sm font-semibold border border-inkBlack hover:bg-mustardHover transition-colors"
+                >
+                  Generar resumen
+                </button>
+                <button
+                  id="copy-summary-btn"
+                  type="button"
+                  class="px-5 py-3 rounded-full bg-baseWhite text-inkBlack text-sm font-semibold border border-inkBlack hover:bg-inkBlack hover:text-baseWhite transition-colors"
+                >
+                  Copiar resumen
+                </button>
+                <a
+                  id="mailto-link"
+                  href="mailto:mariangelvelasco21@gmail.com?subject=Cotizaci%C3%B3n%20-%20Mariangel%20Velasco"
+                  class="px-5 py-3 rounded-full bg-inkBlack text-baseWhite text-sm font-semibold hover:bg-charcoal transition-colors"
+                >
+                  Enviar por correo
+                </a>
+              </div>
+            </form>
+
+            <div class="mt-6 pt-5 border-t border-inkBlack/10">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-inkBlack">Resumen de cotización</span>
+                <span id="total-estimate" class="text-xs font-bold px-3 py-1 rounded-full bg-mustard border border-inkBlack text-inkBlack">
+                  Base: 350 USD
+                </span>
+              </div>
+              <pre
+                id="quote-output"
+                class="p-4 rounded-2xl bg-baseWhite border border-inkBlack/15 text-xs sm:text-sm text-inkBlack font-sans whitespace-pre-wrap leading-relaxed"
+              >Completa el formulario para generar el resumen de tu cotización.</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="bg-inkBlack text-baseWhite py-8 border-t border-baseWhite/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
+      <p class="font-serif text-lg font-bold">
+        Mariangel Velasco <span class="font-sans text-xs font-normal text-baseWhite/70 ml-2">Traductora e Intérprete</span>
+      </p>
+      <div class="flex items-center gap-5 text-baseWhite/80">
+        <a href="tel:+584242965611" class="hover:text-mustard transition-colors">0424 296 56 11</a>
+        <a href="mailto:mariangelvelasco21@gmail.com" class="hover:text-mustard transition-colors">mariangelvelasco21@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast de notificación -->
+  <div
+    id="toast-box"
+    role="status"
+    aria-live="polite"
+    class="hidden fixed bottom-5 right-5 z-50 px-5 py-3 rounded-2xl bg-inkBlack text-baseWhite border border-mustard text-xs sm:text-sm font-medium toast-anim shadow-lg"
+  ></div>
+
+  <script>
+    function handleHeroFallback(img) {
+      img.classList.add('hidden');
+      const fb = document.getElementById('hero-img-fallback');
+      if (fb) {
+        fb.classList.remove('hidden');
+        fb.classList.add('flex');
+      }
+    }
+
+    function notify(msg) {
+      const box = document.getElementById('toast-box');
+      if (!box) return;
+      box.textContent = msg;
+      box.classList.remove('hidden');
+      clearTimeout(window.__toastTimeout);
+      window.__toastTimeout = setTimeout(() => {
+        box.classList.add('hidden');
+      }, 3000);
+    }
+
+    function updateQuoteSummary() {
+      const name = (document.getElementById('event-name')?.value || '').trim() || '[Por indicar]';
+      const date = (document.getElementById('event-date')?.value || '').trim() || '[Por indicar]';
+      const interpType = document.getElementById('interp-type')?.value || 'Interpretación Simultánea';
+      const modality = document.getElementById('event-modality')?.value || 'Presencial';
+      const langPair = document.getElementById('lang-pair')?.value || 'Español - Francés';
+      const durationSelect = document.getElementById('duration-tier');
+      const baseRate = Number(durationSelect?.value || 350);
+      const durationLabel = durationSelect?.selectedOptions?.[0]?.dataset?.label || 'Jornada Completa (8 horas)';
+      const topics = (document.getElementById('event-topics')?.value || '').trim() || '[Por indicar]';
+
+      const includeIva = Boolean(document.getElementById('opt-iva')?.checked);
+      const includeSecondInterpreter = Boolean(document.getElementById('opt-second-interpreter')?.checked);
+
+      const interpreterMultiplier = includeSecondInterpreter ? 2 : 1;
+      const subtotal = baseRate * interpreterMultiplier;
+      const total = includeIva ? +(subtotal * 1.16).toFixed(2) : subtotal;
+
+      const estimateBadge = document.getElementById('total-estimate');
+      if (estimateBadge) {
+        estimateBadge.textContent = `Estimado: ${total} USD${includeIva ? ' (incl. 16% IVA)' : ''}`;
+      }
+
+      const lines = [
+        'COTIZACIÓN — MARIANGEL VELASCO (TRADUCTORA E INTÉRPRETE)',
+        '-------------------------------------------------------',
+        `Nombre del evento: ${name}`,
+        `Fecha: ${date}`,
+        `Tipo de interpretación: ${interpType}`,
+        `Modalidad: ${modality}`,
+        `Par idiomático: ${langPair}`,
+        `Horario y duración: ${durationLabel}`,
+        `Temas a tratar: ${topics}`,
+        `Tarifa base: ${baseRate} USD${includeSecondInterpreter ? ' × 2 intérpretes (relevo cada 30 min)' : ''}`,
+        includeIva ? `IVA (16% transferencia Bs): incluido en total (${total} USD)` : `Total estimado: ${total} USD`,
+        'Pago: 50% al confirmar y 50% al finalizar o hasta 15 días posteriores.'
+      ];
+
+      const summaryText = lines.join('\n');
+      const output = document.getElementById('quote-output');
+      if (output) output.textContent = summaryText;
+
+      const mailtoLink = document.getElementById('mailto-link');
+      if (mailtoLink) {
+        mailtoLink.href = `mailto:mariangelvelasco21@gmail.com?subject=${encodeURIComponent(`Cotización: ${name}`)}&body=${encodeURIComponent(summaryText)}`;
+      }
+
+      return summaryText;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('menu-open');
+      const closeIcon = document.getElementById('menu-close');
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          const willOpen = mobileMenu.classList.contains('hidden');
+          mobileMenu.classList.toggle('hidden', !willOpen);
+          menuBtn.setAttribute('aria-expanded', String(willOpen));
+          openIcon?.classList.toggle('hidden', willOpen);
+          closeIcon?.classList.toggle('hidden', !willOpen);
+        });
+
+        document.querySelectorAll('.mobile-link').forEach((el) => {
+          el.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            openIcon?.classList.remove('hidden');
+            closeIcon?.classList.add('hidden');
+          });
+        });
+      }
+
+      const form = document.getElementById('quote-form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          updateQuoteSummary();
+          notify('Resumen de cotización actualizado.');
+        });
+        form.addEventListener('change', updateQuoteSummary);
+      }
+
+      const copyBtn = document.getElementById('copy-summary-btn');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+          const text = updateQuoteSummary();
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'absolute';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand('copy');
+            notify('Resumen copiado al portapapeles.');
+          } catch (_) {
+            notify('Selecciona el texto del resumen para copiarlo.');
+          }
+          document.body.removeChild(ta);
+        });
+      }
+
+      // Sincronizar tarjetas de tarifas con el selector de duración del cotizador
+      document.querySelectorAll('.plan-select-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const planValue = btn.getAttribute('data-select-plan');
+          const durationSelect = document.getElementById('duration-tier');
+          const contactSection = document.getElementById('contacto');
+
+          if (durationSelect && planValue) {
+            durationSelect.value = planValue;
+            updateQuoteSummary();
+            const label = durationSelect.selectedOptions?.[0]?.dataset?.label || 'Plan seleccionado';
+            notify(`Plan seleccionado: ${label}`);
+          }
+
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      updateQuoteSummary();
+    });
+  </script>
+</body>
+</html>
